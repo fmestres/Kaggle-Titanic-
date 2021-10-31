@@ -33,10 +33,10 @@ def cleanse_dataset(dataset, is_training=False):
     if(is_training):
         dataset = dataset[dataset['Age'].notna()]
     #dataset['AgeSquared'] = dataset['Age'] ** 2
-    SibSpSquared = dataset['SibSp'].pow(2)
-    ParchSquared = dataset['Parch'].pow(2)
-    dataset['SibSpSquared'] = SibSpSquared
-    dataset['ParchSquared'] = ParchSquared
+    sibsp_squared = dataset['SibSp'].pow(2)
+    parch_squared = dataset['Parch'].pow(2)
+    dataset['SibSpSquared'] = sibsp_squared
+    dataset['ParchSquared'] = parch_squared
 
 
     variables = dataset.drop(['Survived', 'PassengerId', 'Name', 'Cabin', 'Ticket', 'Embarked'], axis=1)
